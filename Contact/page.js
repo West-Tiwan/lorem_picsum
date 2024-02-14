@@ -1,10 +1,7 @@
 import React from 'react'
-import Header from "@/Components/Header";
-
-const page = () => {
+const Contact = () => {
     return (
-        <Header/>
         <div>contact</div>
     )
 }
-export default page
+export default Contact
