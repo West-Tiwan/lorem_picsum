@@ -1,12 +1,29 @@
 "use client"
-import React from 'react'
-import Header from "@/Components/Header";
-import Link from "next/link";
+import React,{useState} from 'react'
+import axios from 'axios'
 
 const Page = () => {
+    const [images, setImages] = useState([]);
+
+    const res = async ()=>{
+        try {
+            let response = await axios.get('https://picsum.photos/200/300');
+            setImages(response.data);
+            console.log(images);
+
+        }
+        catch (err){
+            console.log("err");
+        }
+    }
     return (
         <div>
-        <div>home</div>
+            <button onClick={res}>get images</button>
+            <div>
+                {images.map((elem,i)=>{
+                    return <img src={elem.download_url}/>
+                })}
+            </div>
         </div>
 )
 }
