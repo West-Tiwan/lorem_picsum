@@ -15,7 +15,7 @@ const Page = () => {
             <button onClick={getimg}>get images</button>
             <div>
                 {imag.map((elem,index)=>{
-                    return <img key={index} src={elem.download_url} />
+                    return <img key={index} src={elem.download_url} alt={}/>
                 })}
             </div>
         </>
