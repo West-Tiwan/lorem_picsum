@@ -21,7 +21,7 @@ const Page = () => {
             <button onClick={res}>get images</button>
             <div>
                 {Array.from(images).map((elem,i)=>{
-                    return <img src={elem.url}/>
+                    return <img src={elem.url} />
                 })}
             </div>
         </div>
