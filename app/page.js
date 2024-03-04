@@ -20,8 +20,8 @@ const Page = () => {
         <div>
             <button onClick={res}>get images</button>
             <div>
-                {Array.from(images).map((elem,i)=>{
-                    return <img src={elem.url} />
+                {images.map((elem,index)=>{
+                    return <img src={elem.url} key={index} alt={elem.download_url}/>
                 })}
             </div>
         </div>
