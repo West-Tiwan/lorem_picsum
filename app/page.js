@@ -15,9 +15,9 @@ const Page = () => {
             <div className={"flex justify-center items-center min-h-44"}>
                 <button onClick={getimg} className={"border-2 border-black bg-green-300 p-5"}>get images</button>
             </div>
-            <div>
+            <div className={"grid grid-cols-3 gap-2 overflow-hidden"}>
                 {imag.map((elem, index) => {
-                    return <img key={index} src={elem.download_url} alt=""/>
+                    return <img className={"m-3 h-32"} key={index} src={elem.download_url} alt=""/>
                 })}
             </div>
         </>
