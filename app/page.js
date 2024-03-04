@@ -1,30 +1,19 @@
 "use client"
-import React,{useState} from 'react'
-import axios from 'axios'
+import React from 'react'
+import axios from "axios";
 
 const Page = () => {
-    const [images, setImages] = useState([]);
-
-    const res = async ()=>{
-        try {
-            let response = await axios.get('https://picsum.photos/200/300');
-            setImages(response.data);
-            console.log(images);
-
-        }
-        catch (err){
-            console.log("err");
-        }
+    const getimg = async  ()=> {
+        const  response = await axios.get("https://picsum.photos/v2/list")
+        console.log(response)
     }
     return (
-        <div>
-            <button onClick={res}>get images</button>
+        <>
+            <button onClick={getimg}>get images</button>
             <div>
-                {images.map((elem,index)=>{
-                    return <img src={elem.url} key={index} alt={elem.download_url}/>
-                })}
+
             </div>
-        </div>
-)
+        </>
+    )
 }
 export default Page
