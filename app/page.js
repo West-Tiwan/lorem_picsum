@@ -12,9 +12,11 @@ const Page = () => {
     }
     return (
         <>
-            <button onClick={getimg}>get images</button>
+            <div className={"flex justify-center items-center min-h-44"}>
+                <button onClick={getimg} className={"border-2 border-black bg-green-300 p-5"}>get images</button>
+            </div>
             <div>
-                {imag.map((elem,index)=>{
+                {imag.map((elem, index) => {
                     return <img key={index} src={elem.download_url} alt=""/>
                 })}
             </div>
