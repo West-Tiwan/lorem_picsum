@@ -12,7 +12,7 @@ const Page = () => {
             setImag(response.data)
         }
         catch (err){
-            console.log("error occured"+err)
+            console.log("error occured")
         }
     }
     return (
