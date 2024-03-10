@@ -5,7 +5,7 @@ import { ToastContainer, toast } from 'react-toastify';
 
 import 'react-toastify/dist/ReactToastify.css';
 
-const notify = ()=>{toast.success('Got Data', {
+const notify = ()=>{toast.success('Got Pictures', {
     position: "bottom-right",
     autoClose: 5000,
     hideProgressBar: false,
@@ -21,7 +21,7 @@ const Page = () => {
 
     const getimg = async  ()=> {
         try {
-            const  response = await axios.get("https://picsum.photos/v2/list")
+            const  response = await axios.get("https://picsum.photos/v2/list").then(notify())
             console.log(response)
             setImag(response.data)
         }
